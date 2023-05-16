@@ -1,0 +1,1 @@
+<hr class="border-t border-gray-50" /><?php /**PATH E:\Laravel\ofelia\resources\views/components/hr.blade.php ENDPATH**/ ?>

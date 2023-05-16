@@ -65,7 +65,6 @@
         "laravel/tinker": "^2.5",
         "league/commonmark": "^1.5",
         "livewire/livewire": "^2.3",
-        "maatwebsite/excel": "^3.1",
         "malhal/laravel-geographical": "^1.0",
         "mbezhanov/faker-provider-collection": "^2.0",
         "mtdowling/jmespath.php": "^2.6",

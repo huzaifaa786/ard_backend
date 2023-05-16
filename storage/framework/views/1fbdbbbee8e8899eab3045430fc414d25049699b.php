@@ -1,0 +1,1 @@
+<?php /**PATH E:\Laravel\ofelia\resources\views/vendor/livewire-tables/stubs/modals.blade.php ENDPATH**/ ?>
