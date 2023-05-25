@@ -9,11 +9,13 @@ use App\Models\Vehicle;
 use App\Models\Vendor;
 use App\Traits\FirebaseAuthTrait;
 use Exception;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Mockery\Expectation;
 use Propaganistas\LaravelPhone\PhoneNumber;
 
 
@@ -113,7 +115,7 @@ class AuthController extends Controller
             } else {
                 return $this->authObject($user);
             }
-        } catch (\DecryptException $e) {
+        } catch (DecryptException $e) {
             return response()->json([
                 "message" => __('Invalid Login Data')
             ], 400);
@@ -230,9 +232,9 @@ class AuthController extends Controller
                     "message" => __("Account Password Updated Successfully"),
                 ], 200);
             }
-        } catch (\Expection $ex) {
+        } catch (Expectation $ex) {
             return response()->json([
-                "message" => $ex->getMessage(),
+                "message" => $ex->getExceptionMessage(),
             ], 400);
         }
     }

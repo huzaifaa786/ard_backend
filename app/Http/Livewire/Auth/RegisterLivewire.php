@@ -9,6 +9,7 @@ use App\Models\Vehicle;
 use App\Models\Vendor;
 use App\Models\VendorType;
 use App\Traits\VehicleTrait;
+use Exception;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Propaganistas\LaravelPhone\PhoneNumber;
