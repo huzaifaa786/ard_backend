@@ -13,7 +13,7 @@ x-transition:leave-end="opacity-0"
             <!-- <img src="<?php echo e(setting('websiteLogo', asset('images/logo.png') )); ?>" class="w-16 h-16 rounded" /> -->
             <div class="ltr:pl-6 rtl:pr-6">
                 <p>Ofelia</p>
-                <p class="text-xs text-gray-200"><?php echo e(__('version')); ?> <?php echo e(setting('appVerison', "1.0.0" )); ?></p>
+                <!-- <p class="text-xs text-gray-200"><?php echo e(__('version')); ?> <?php echo e(setting('appVerison', "1.0.0" )); ?></p> -->
             </div>
         </a>
         <?php echo $__env->make('layouts.partials.nav.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
