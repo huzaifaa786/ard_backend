@@ -55,10 +55,11 @@ class AuthController extends Controller
             return response()->json([
                 "message" => __("Unauthorized Access. Please try with an authorized credentials")
             ], 401);
-        } else if (!$user->is_active) {
-            return response()->json([
-                "message" => __("Account is not active. Please contact us")
-            ], 401);
+        } else if ($user->vendor_id != Null) {
+            if (!$user->vendor->is_active) {
+                $this->showErrorAlert(__("Account is not active. Please contact us"));
+                return;
+            }
         } else if ($request->role == "manager" && empty($user->vendor_id)) {
             return response()->json([
                 "message" => __("Manager is not assigned to a vendor. Please assign manager to vendor and try again")

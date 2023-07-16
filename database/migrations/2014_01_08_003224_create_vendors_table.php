@@ -29,7 +29,7 @@ class CreateVendorsTable extends Migration
             $table->double('commission', 8, 2)->default(0);
             $table->boolean('pickup')->default(true);
             $table->boolean('delivery')->default(false);
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')->default(false);
             $table->boolean('charge_per_km')->nullable();
             $table->boolean('is_open')->default(true);
             $table->foreignId('vendor_type_id')->nullable()->constrained();

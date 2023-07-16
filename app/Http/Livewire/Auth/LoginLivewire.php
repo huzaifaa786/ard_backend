@@ -27,7 +27,7 @@ class LoginLivewire extends BaseLivewireComponent
             $this->email = "city-admin@demo.com";
         } else if ($type == 4) {
             $this->email = "manager3@demo.com";
-        }else {
+        } else {
             $this->email = "client@demo.com";
         }
         $this->password = "password";
@@ -53,9 +53,11 @@ class LoginLivewire extends BaseLivewireComponent
         if ($user->hasAnyRole('client', 'driver')) {
             $this->showErrorAlert("Unauthorized Access");
             return;
-        } else if (!$user->is_active) {
-            $this->showErrorAlert(__("Account is not active. Please contact us"));
-            return;
+        } else if ($user->vendor_id != Null) {
+            if (!$user->vendor->is_active) {
+                $this->showErrorAlert(__("Account is not active. Please contact us"));
+                return;
+            }
         }
 
         if (Hash::check($this->password, $user->password) && Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {

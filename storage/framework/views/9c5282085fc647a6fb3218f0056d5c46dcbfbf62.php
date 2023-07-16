@@ -2805,15 +2805,15 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('component.dynamic-nav-menu', [])->html();
-} elseif ($_instance->childHasBeenRendered('N7Hh9OS')) {
-    $componentId = $_instance->getRenderedChildComponentId('N7Hh9OS');
-    $componentTag = $_instance->getRenderedChildComponentTagName('N7Hh9OS');
+} elseif ($_instance->childHasBeenRendered('GjHAxkU')) {
+    $componentId = $_instance->getRenderedChildComponentId('GjHAxkU');
+    $componentTag = $_instance->getRenderedChildComponentTagName('GjHAxkU');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('N7Hh9OS');
+    $_instance->preserveRenderedChild('GjHAxkU');
 } else {
     $response = \Livewire\Livewire::mount('component.dynamic-nav-menu', []);
     $html = $response->html();
-    $_instance->logRenderedChild('N7Hh9OS', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('GjHAxkU', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

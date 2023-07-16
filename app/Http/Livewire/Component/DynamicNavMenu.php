@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Component;
 
 use Livewire\Component;
 use App\Models\NavMenu;
+use Illuminate\Support\Facades\Schema;
 
 class DynamicNavMenu extends Component
 {
@@ -12,7 +13,7 @@ class DynamicNavMenu extends Component
 
     public function mount()
     {
-        if (\Schema::hasTable('nav_menus')) {
+        if (Schema::hasTable('nav_menus')) {
             $this->menu = NavMenu::get();
         }
     }
